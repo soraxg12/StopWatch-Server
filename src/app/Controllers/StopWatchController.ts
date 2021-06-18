@@ -22,29 +22,7 @@ class StopWatchController {
             return res.status(400).json(error);
         }
     }
-    // pegar um item
-    static async FindOne(req: Request, res: Response) {
-        const { id } = req.params;
-        try {
-            const stopWatch = await StopWatch.findOne({ _id: id });
-
-            return res.status(200).json(stopWatch);
-        } catch (error) {
-            res.status(400).json(error);
-        }
-    }
-    // atualiza um item
-    static async Update(req: Request, res: Response) {
-        const { id } = req.params;
-
-        try {
-            const stopWatchUpdated = await StopWatch.updateOne({ _id: id }, req.body);
-
-            return res.status(200).json(stopWatchUpdated);
-        } catch (error) {
-            res.status(400).json(error);
-        }
-    }
+   
     // deleta um item
     static async DeleteOne(req: Request, res: Response) {
         const { id } = req.params;
